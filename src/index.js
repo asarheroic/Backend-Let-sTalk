@@ -6,7 +6,6 @@ const { connectDB } = require('./lib/connection')
 const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const { io,app,server } = require('./lib/socket')
-const path =  require('path')
 
 
 
@@ -33,14 +32,7 @@ app.use("/api/auth" ,authRoutes)
 app.use("/api/message" ,messageRoutes)
 
 
-if(process.env.NODE_ENV=='production'){
-  app.use(express.static(path.join(__dirname , '../frontend/dist')))
 
-  app.get('*', (req,res) => {
-    res.sendFile(path.join(__dirname ,'../frontend','dist',"index.html"))
-  }
-  )
-}
 
 
 
