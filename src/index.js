@@ -21,7 +21,7 @@ app.use(express.json({ limit: '5mb' })); // or more if needed
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin : 'http://localhost:5173',
+  origin : process.env.FE_URL,
   credentials : true
 }))
 
