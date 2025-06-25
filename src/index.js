@@ -18,7 +18,6 @@ const port = process.env.PORT
 
 app.use(express.json({ limit: '5mb' })); // or more if needed
 
-app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
   origin : process.env.FE_URL,
